@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+  <head>
+  </head>
+  <body ng-controller='TopSpotsController as topSpotsCtrl'>
+    <h1>San Diego Top Spots</h1>
+
+ 
+    <table class="table">
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Location</th>
+      </tr>
+      <tr ng-repeat='place in topSpotsCtrl.places'>
+        <td>{{place.name}}</td>
+        <td>{{place.description}}</td>
+        <td><a href="https://www.google.com/maps?q={{place.location[0]}},{{place.location[1]}}">Link</a></td>
+      </tr>
+   </table>
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" >
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+<script src='app.module.js'></script>
+<script src='topspots.controller.js'></script>
+
+</body>
+</html>
